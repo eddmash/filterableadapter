@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="h4">
+        <item name="android:textColor">@color/text_primary_inverse</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+    <style name="form_input">
+        <item name="android:layout_marginTop">@dimen/margin_space_input</item>
+        <item name="android:layout_marginBottom">@dimen/margin_space_input</item>
+        <item name="android:layout_marginLeft">@dimen/margin_space_input</item>
+        <item name="android:layout_marginRight">@dimen/margin_space_input</item>
+    </style>
+
+    <style name="form_submit_btn" parent="form_input">
+        <item name="android:layout_marginRight">@dimen/paragraph_space</item>
+        <item name="android:layout_marginLeft">@dimen/paragraph_space</item>
+    </style>
+
+</resources>

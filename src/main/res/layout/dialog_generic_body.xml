@@ -61,7 +61,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/info"
-            android:text="@string/btn_get_data_update"
+            android:text="@string/ok_btn"
             android:textColor="@color/text_primary" />
 
         <Button
@@ -71,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/grey"
-            android:text="@string/btn_update_later"
+            android:text="@string/cancel_btn"
             android:textColor="@color/text_primary" />
     </LinearLayout>
 
