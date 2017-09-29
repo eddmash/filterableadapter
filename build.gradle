@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 ext {
+    versionCode = 3
     bintrayRepo = 'maven'
     bintrayName = 'dialogs'
 
@@ -13,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/eddmash/dialogs'
     gitUrl = 'https://github.com/eddmash/dialogs.git'
 
-    libraryVersion = "1.0.2"
+    libraryVersion = "1.0.${versionCode}"
 
     developerId = 'eddmash'
     developerName = 'Eddilbert Macharia'
@@ -31,7 +32,7 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 1
+        versionCode project.versionCode
         versionName "${libraryVersion}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
