@@ -88,16 +88,7 @@ public abstract class GenericDialog extends DialogFragment {
         getDialog().requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         customTitleView = (TextView) this.layout.findViewById(R.id.dialog_title);
-        if (title != null) {
-            customTitleView.setText(title);
-        }
         customIconView = (ImageView) this.layout.findViewById(R.id.dialog_icon);
-        if (icon != 0) {
-            customIconView.setVisibility(View.VISIBLE);
-            customIconView.setImageDrawable(ContextCompat.getDrawable(getActivity(), icon));
-        }else {
-            customIconView.setVisibility(View.GONE);
-        }
         leftButton = (Button) view.findViewById(R.id.btn_get_data_update);
         rightButton = (Button) view.findViewById(R.id.btn_update_later);
         leftButton.setVisibility(View.GONE);
@@ -105,7 +96,18 @@ public abstract class GenericDialog extends DialogFragment {
 
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         onViewReady(layout, savedInstanceState);
-        addToView(this.layout);
+
+        // put this after views ready to allow overriding them
+        if (title != null) {
+            customTitleView.setText(title);
+        }
+
+        if (icon != 0) {
+            customIconView.setVisibility(View.VISIBLE);
+            customIconView.setImageDrawable(ContextCompat.getDrawable(getActivity(), icon));
+        }else {
+            customIconView.setVisibility(View.GONE);
+        }
 
         doTitleConfigurations();
         doButtonConfigutions();
@@ -163,9 +165,6 @@ public abstract class GenericDialog extends DialogFragment {
      * base layout has been polutated with your content layout
      */
     protected abstract void onViewReady(View view, @Nullable Bundle savedInstanceState);
-
-    public void addToView(View layout) {
-    }
 
     public void setIcon(@DrawableRes int drawable) {
         icon = drawable;
