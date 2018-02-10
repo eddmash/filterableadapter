@@ -22,7 +22,7 @@ work with multiple forms on multiple fragments via :doc:`FormCollection<form_col
 The library also comes an inbuilt :doc:`Data populator <faker>` to use when developing. This comes
 in handy when you want to prepopulate you form with sample data.
 
-For validation the `Validation <http://android-validation-library.readthedocs.io>`_ is used.
+For validation the :doc:`Validation <../validation/index>` is used.
 
 .. image:: basicform.png
 
