@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -27,9 +28,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 //    implementation project(':android-activerecord')
-    implementation project(':android-validation')
-    implementation project(':android-form')
-    implementation project(':android-pagination')
-    implementation project(':android-adapter')
-    implementation project(':android-grids')
+    implementation project(':validation')
+    implementation project(':form')
+    implementation project(':pagination')
+    implementation project(':adapter')
+    implementation project(':grid')
 }

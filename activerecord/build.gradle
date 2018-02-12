@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'android-maven'
+
+group='com.github.eddmash.androidcomponents'
+
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'activerecord'
