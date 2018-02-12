@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="paragraph_space">4dp</dimen>
+    <dimen name="margin_space_input">8dp</dimen>
+    <dimen name="h4">15sp</dimen>
+</resources>
