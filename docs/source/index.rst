@@ -30,13 +30,13 @@ To be able to use any of this components.
 .. code-block:: java
 
 	dependencies {
-	        compile 'com.github.eddmash:androidcomponents:activerecord:2.0.0'
-	        compile 'com.github.eddmash:androidcomponents:grid:2.0.0'
-	        compile 'com.github.eddmash:androidcomponents:form:2.0.0'
-	        compile 'com.github.eddmash:androidcomponents:validation:2.0.0'
-	        compile 'com.github.eddmash:androidcomponents:pagination:2.0.0'
-	        compile 'com.github.eddmash:androidcomponents:adapter:2.0.0'
-	        compile 'com.github.eddmash:androidcomponents:views:2.0.0'
+	        compile 'com.github.eddmash.androidcomponents:activerecord:2.0.1'
+	        compile 'com.github.eddmash:androidcomponents:grid:2.0.1'
+	        compile 'com.github.eddmash:androidcomponents:form:2.0.1'
+	        compile 'com.github.eddmash:androidcomponents:validation:2.0.1'
+	        compile 'com.github.eddmash:androidcomponents:pagination:2.0.1'
+	        compile 'com.github.eddmash:androidcomponents:adapter:2.0.1'
+	        compile 'com.github.eddmash:androidcomponents:views:2.0.1'
 	}
 
 .. toctree::
