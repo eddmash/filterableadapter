@@ -3,38 +3,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'android-maven'
 
 group='com.github.eddmash.androidcomponents'
-ext {
-    versionCode = 16
-    bintrayRepo = 'maven'
-    bintrayName = 'validation'
 
-    publishedGroupId = 'com.eddmash'
-    libraryName = 'validation'
-    artifact = 'validation'
-
-    libraryDescription = 'Android validation library.'
-
-    siteUrl = 'https://github.com/eddmash/validation'
-    gitUrl = 'https://github.com/eddmash/validation.git'
-
-    libraryVersion = "1.0.${versionCode}"
-
-    developerId = 'eddmash'
-    developerName = 'Eddilbert Macharia'
-    developerEmail = 'edd.cowan@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
 android {
-    compileSdkVersion 25
+    compileSdkVersion project.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 25
-        versionCode project.versionCode
-        versionName "${libraryVersion}"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName "${project.ext.versionName}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         genders.add(new SimpleValue(" ", " "));
         genders.add(new SimpleValue("1", "Male"));
         genders.add(new SimpleValue("2", "Female"));
-        genderSpinner = findViewById(R.id.gender);
+        genderSpinner = (Spinner) findViewById(R.id.gender);
 
         ArrayAdapter<ValueInterface> adapter = new ArrayAdapter<>(this, R.layout.spinneritem,
                 genders);

@@ -2,40 +2,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'android-maven'
 
 group='com.github.eddmash.androidcomponents'
-ext {
-    versionCode = 2
-    bintrayRepo = 'maven'
-    bintrayName = 'android-views'
-
-    publishedGroupId = 'com.eddmash'
-    libraryName = 'android-views'
-    artifact = 'android-views'
-
-    libraryDescription = 'A set of custom views.'
-
-    siteUrl = 'https://github.com/eddmash/android-views'
-    gitUrl = 'https://github.com/eddmash/android-views.git'
-
-
-    libraryVersion = "1.0.${versionCode}"
-
-    developerId = 'eddmash'
-    developerName = 'Eddilbert Macharia'
-    developerEmail = 'edd.cowan@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion project.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 25
-        versionCode project.versionCode
-        versionName "${libraryVersion}"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName "${project.ext.versionName}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -53,9 +28,9 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.4.0'
+    implementation project.ext.supportDependencies.appCompat
+    implementation project.ext.supportDependencies.design
 
-    compile 'com.android.support:design:25.4.0'
     testCompile 'junit:junit:4.12'
 }
 

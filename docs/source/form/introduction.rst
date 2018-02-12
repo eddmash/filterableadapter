@@ -1,24 +1,3 @@
-
-Install
-*******
-
-using Maven.
-
-::
-
-    <dependency>
-      <groupId>com.eddmash</groupId>
-      <artifactId>android-form</artifactId>
-      <version>1.0.8</version>
-      <type>pom</type>
-    </dependency>
-
-Using gradle
-
-::
-
-    compile 'com.eddmash:android-form:1.0.8'
-
 Usage
 *****
 

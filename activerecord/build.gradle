@@ -4,38 +4,14 @@ apply plugin: 'android-maven'
 
 group='com.github.eddmash.androidcomponents'
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'activerecord'
-
-    publishedGroupId = 'com.eddmash'
-    libraryName = 'activerecord'
-    artifact = 'activerecord'
-
-    libraryDescription = 'A simple set of helper methods to query for data on android sqlite database.'
-
-    siteUrl = 'https://github.com/eddmash/activerecord'
-    gitUrl = 'https://github.com/eddmash/activerecord.git'
-
-    libraryVersion = "1.0.2"
-
-    developerId = 'eddmash'
-    developerName = 'Eddilbert Macharia'
-    developerEmail = 'edd.cowan@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
 android {
-    compileSdkVersion 25
+    compileSdkVersion project.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 25
-        versionCode 2
-        versionName "${libraryVersion}"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName "${project.ext.versionName}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -53,7 +29,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
 

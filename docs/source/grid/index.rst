@@ -9,23 +9,6 @@ pagination.
 Its takes a List of Maps that contains data and renders each row using a set
 of :java:ref:`ColumnInterface <ColumnInterface>` presenting data in the form of a table.
 
-Install
--------
-
-Using maven::
-
-    <dependency>
-      <groupId>com.eddmash</groupId>
-      <artifactId>android-grids</artifactId>
-      <version>1.0.2</version>
-      <type>pom</type>
-    </dependency>
-
-
-Using gradle::
-
-    compile 'com.eddmash:android-grids:1.0.2'
-
 Usage
 -----
 
