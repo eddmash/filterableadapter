@@ -1,1 +1,2 @@
-include ':app', ':validation',':activerecord',':adapter',':form',':grid', ':pagination', ':views'
+include ':app', ':validation',':activerecord',':adapter',':form',':grid', ':pagination',
+        ':views', ':dialogs'

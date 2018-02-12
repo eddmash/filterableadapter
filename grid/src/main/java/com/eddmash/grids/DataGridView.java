@@ -10,6 +10,7 @@ package com.eddmash.grids;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
@@ -60,21 +61,20 @@ import java.util.Map;
  * <p>
  * Its also possible to override which columns are used in the grid and
  * customize those columns as one wishes.
- *
+ * <p>
  * Assuming in the data provided to the gridview looks like this
- *
+ * <p>
  * [{"first_name":"jake", "age":"4"}, {"first_name":"joan", "age":"6"}, ]
- *
+ * <p>
  * The ealier example will render both the firstname and age column on the grid
  * we can tell the gridview to only render the firstname by
  * {@link DataGridView#setColumns(Map)} as shown below:
- *
+ * <p>
  * <pre>
  *     Map cols = new HashMap();
  *     cols.put("first_name", new Column(this,"first_name","First Name"));
  *     dataGridView.setColumns(cols);
  * </pre>
- *
  */
 public class DataGridView extends LinearLayout {
 
@@ -146,7 +146,7 @@ public class DataGridView extends LinearLayout {
                 ViewGroup.LayoutParams.WRAP_CONTENT
         ));
         Drawable progressDrawable = progressBar.getIndeterminateDrawable()
-                                               .mutate();
+                .mutate();
         progressDrawable.setColorFilter(
                 Color.YELLOW,
                 android.graphics.PorterDuff.Mode.SRC_IN
@@ -443,7 +443,7 @@ public class DataGridView extends LinearLayout {
 
     private void updateStatsBar() {
         String text = String.format("Found %s of %s", data.size(),
-                                    paginator.getTotalRecords()
+                paginator.getTotalRecords()
         );
         if (data.isEmpty()) {
             text = " No data to display";
@@ -487,6 +487,12 @@ public class DataGridView extends LinearLayout {
 
     // ================== SET DATA ==================================
 
+    /**
+     * You can populate the datagrid using list of map data. This data will be paginated based on
+     * the page size set
+     *
+     * @param data data to display.
+     */
     public void setData(final List<Map> data) {
         final ListPaginator pager = new ListPaginator(getDataListener());
 
@@ -498,11 +504,26 @@ public class DataGridView extends LinearLayout {
 
     }
 
-    public void setQuery(ActiveRecord activeRecord,
+    /**
+     * You can populate the datagrid using a query. THe data grid will fetch data in a paginated
+     * manner base on the page size set.
+     *
+     * <pre>
+     *     dataGridView = (DataGridView) findViewById(R.id.content_dsp);
+     *     dataGridView.setPageSize(3);
+     *     dataGridView.setQuery(SqlHelper.getInstance(this).getReadableDatabase(),
+     *                                      "select * from coffees", new String[]{});
+     * </pre>
+     *
+     * @param database a SQLiteDatabase to use
+     * @param sql      querys to fetch data
+     * @param params   binding params to the query
+     */
+    public void setQuery(SQLiteDatabase database,
                          final String sql,
                          final String[] params) {
         final SqlPaginator pager = new SqlPaginator(
-                getDataListener(), activeRecord.getDb());
+                getDataListener(), database);
 
         setPaginator(pager, new LazyResolver() {
             public void resolve() {

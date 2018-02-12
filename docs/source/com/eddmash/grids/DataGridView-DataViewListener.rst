@@ -2,6 +2,8 @@
 
 .. java:import:: android.content.res TypedArray
 
+.. java:import:: android.database.sqlite SQLiteDatabase
+
 .. java:import:: android.graphics Color
 
 .. java:import:: android.graphics.drawable Drawable
@@ -34,9 +36,9 @@
 
 .. java:import:: com.eddmash.grids.columns BaseColumn
 
-.. java:import:: com.eddmash.grids.columns ColumnInterface
-
 .. java:import:: com.eddmash.grids.columns Column
+
+.. java:import:: com.eddmash.grids.columns ColumnInterface
 
 .. java:import:: com.eddmash.pagination DataListener
 

@@ -8,3 +8,4 @@ git subtree push --prefix=views/ git@github.com:eddmash/android-views.git master
 git subtree push --prefix=grid/ git@github.com:eddmash/android-grids.git master
 git subtree push --prefix=pagination/ git@github.com:eddmash/pagination.git master
 git subtree push --prefix=validation/ git@github.com:eddmash/validation.git master
+git subtree push --prefix=dialogs/ git@github.com:eddmash/dialogs.git master

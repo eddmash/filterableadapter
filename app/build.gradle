@@ -33,5 +33,6 @@ dependencies {
     implementation project(':form')
     implementation project(':pagination')
     implementation project(':adapter')
+    implementation project(':dialogs')
     implementation project(':grid')
 }

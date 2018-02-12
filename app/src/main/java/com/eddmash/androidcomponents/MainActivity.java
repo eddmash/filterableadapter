@@ -1,5 +1,6 @@
 package com.eddmash.androidcomponents;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -144,6 +145,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, GridExampleActivity.class));
+            }
+        });
+        Button dialog = (Button) findViewById(R.id.dialog_example);
+        dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DialogsActivity.class));
             }
         });
     }

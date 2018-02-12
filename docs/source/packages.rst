@@ -5,6 +5,7 @@ Javadoc
    :maxdepth: 2
 
    com/eddmash/db/package-index
+   com/eddmash/dialogs/package-index
    com/eddmash/form/package-index
    com/eddmash/form/collection/package-index
    com/eddmash/form/faker/package-index

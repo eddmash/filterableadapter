@@ -56,6 +56,21 @@ e.g. action columns, serial columns or your own custom columns.
     dataGridView.addColumn(new EditActionColumn(this, "Edit"), DataGridView.RIGHT);
     dataGridView.addColumn(new DeleteActionColumn(this, "Delete"), DataGridView.RIGHT);
 
+
+Setting Data
+------------
+
+The datagrid view supports two forms of setting data.
+
+- set a list of map data like we have been doing above using the
+  :java:ref:`setData() <DataGridView.setData()>` method.
+
+- set a list of map data like we have been doing above using the
+  :java:ref:`setQuery() <DataGridView.setQuery()>` method.
+
+Columns
+-------
+
 Learn more about columns :doc:`Columns <columns>`
 
 .. toctree::

@@ -35,4 +35,7 @@
     <string name="title_activity_grid_example">GridExampleActivity</string>
     <string name="grid_example">Go to Grid Example</string>
     <string name="grid_example_title">Data Grid Example</string>
+    <string name="title_activity_dialogs">DialogsActivity</string>
+    <string name="grid_dialog_example_title">Data Grid and Dialogs Example</string>
+    <string name="dialog_example">Dialog Gridview Example</string>
 </resources>

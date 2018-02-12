@@ -2,6 +2,8 @@
 
 .. java:import:: android.content.res TypedArray
 
+.. java:import:: android.database.sqlite SQLiteDatabase
+
 .. java:import:: android.graphics Color
 
 .. java:import:: android.graphics.drawable Drawable
@@ -34,9 +36,9 @@
 
 .. java:import:: com.eddmash.grids.columns BaseColumn
 
-.. java:import:: com.eddmash.grids.columns ColumnInterface
-
 .. java:import:: com.eddmash.grids.columns Column
+
+.. java:import:: com.eddmash.grids.columns ColumnInterface
 
 .. java:import:: com.eddmash.pagination DataListener
 
@@ -81,7 +83,13 @@ DataGridView
       List data = "...;
       dataGridView.setData(data);
 
-   Its also possible to override which columns are used in the grid and customize those columns as one wishes. Assuming in the data provided to the gridview looks like this [{"first_name":"jake", "age":"4"}, {"first_name":"joan", "age":"6"}, ] The ealier example will render both the firstname and age column on the grid we can tell the gridview to only render the firstname by \ :java:ref:`DataGridView.setColumns(Map)`\  as shown below:
+   Its also possible to override which columns are used in the grid and customize those columns as one wishes.
+
+   Assuming in the data provided to the gridview looks like this
+
+   [{"first_name":"jake", "age":"4"}, {"first_name":"joan", "age":"6"}, ]
+
+   The ealier example will render both the firstname and age column on the grid we can tell the gridview to only render the firstname by \ :java:ref:`DataGridView.setColumns(Map)`\  as shown below:
 
    .. parsed-literal::
 
@@ -238,6 +246,10 @@ setData
 .. java:method:: public void setData(List<Map> data)
    :outertype: DataGridView
 
+   You can populate the datagrid using list of map data. This data will be paginated based on the page size set
+
+   :param data: data to display.
+
 setHeaderColor
 ^^^^^^^^^^^^^^
 
@@ -259,8 +271,21 @@ setPaginator
 setQuery
 ^^^^^^^^
 
-.. java:method:: public void setQuery(ActiveRecord activeRecord, String sql, String[] params)
+.. java:method:: public void setQuery(SQLiteDatabase database, String sql, String[] params)
    :outertype: DataGridView
+
+   You can populate the datagrid using a query. THe data grid will fetch data in a paginated manner base on the page size set.
+
+   .. parsed-literal::
+
+      dataGridView = (DataGridView) findViewById(R.id.content_dsp);
+      dataGridView.setPageSize(3);
+      dataGridView.setQuery(SqlHelper.getInstance(this).getReadableDatabase(),
+                                       "select * from coffees", new String[]{});
+
+   :param database: a SQLiteDatabase to use
+   :param sql: querys to fetch data
+   :param params: binding params to the query
 
 setStripColor
 ^^^^^^^^^^^^^

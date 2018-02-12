@@ -29,16 +29,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * A generic class that makes it to customize dialog boxes.
- * example usage
- * <p>
+ * A generic class that makes it easy to customize dialog boxes.
+ * example usage of an implementation {@link AlertboxDialog}
+ * <pre>
  * AlertboxDialog alertboxDialog = new AlertboxDialog();
  * alertboxDialog.disableButtons(true);
  * alertboxDialog.setTitle("NETWORK ERROR");
  * alertboxDialog.setIcon(R.drawable.fail);
  * alertboxDialog.setMessage(activity.getString(R.string.network_error));
  * alertboxDialog.show(activity.getSupportFragmentManager(), "network_error");
- * </p>
+ * </pre>
  */
 public abstract class GenericDialog extends DialogFragment {
     protected Button leftButton;
@@ -94,7 +94,8 @@ public abstract class GenericDialog extends DialogFragment {
         leftButton.setVisibility(View.GONE);
         rightButton.setVisibility(View.GONE);
 
-        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams
+                .SOFT_INPUT_STATE_VISIBLE);
         onViewReady(layout, savedInstanceState);
 
         // put this after views ready to allow overriding them
@@ -105,7 +106,7 @@ public abstract class GenericDialog extends DialogFragment {
         if (icon != 0) {
             customIconView.setVisibility(View.VISIBLE);
             customIconView.setImageDrawable(ContextCompat.getDrawable(getActivity(), icon));
-        }else {
+        } else {
             customIconView.setVisibility(View.GONE);
         }
 
@@ -119,13 +120,15 @@ public abstract class GenericDialog extends DialogFragment {
             if (titleSettings.containsKey("bgColor")) {
                 int colorId = (int) titleSettings.get("bgColor");
                 if (colorId > 0) {
-                    customTitleView.setBackgroundColor(getActivity().getResources().getColor(colorId));
+                    customTitleView.setBackgroundColor(getActivity().getResources().getColor
+                            (colorId));
                 }
             }
             if (titleSettings.containsKey("textColor")) {
                 int textColorId = (int) titleSettings.get("textColor");
                 if (textColorId > 0) {
-                    customTitleView.setTextColor(getActivity().getResources().getColor(textColorId));
+                    customTitleView.setTextColor(getActivity().getResources().getColor
+                            (textColorId));
                 }
             }
         }
@@ -135,7 +138,8 @@ public abstract class GenericDialog extends DialogFragment {
         if (buttonSettings.size() > 0) {
             if (buttonSettings.containsKey(RIGHTBUTTON)) {
                 Map rSettings = buttonSettings.get(RIGHTBUTTON);
-                final ButtonClickedListener lister = (ButtonClickedListener) rSettings.get("listener");
+                final ButtonClickedListener lister = (ButtonClickedListener) rSettings.get
+                        ("listener");
                 rightButton.setVisibility(View.VISIBLE);
                 rightButton.setText(rSettings.get("label").toString());
                 rightButton.setOnClickListener(new View.OnClickListener() {
@@ -147,7 +151,8 @@ public abstract class GenericDialog extends DialogFragment {
             }
             if (buttonSettings.containsKey(LEFTBUTTON)) {
                 Map lSettings = buttonSettings.get(LEFTBUTTON);
-                final ButtonClickedListener lister = (ButtonClickedListener) lSettings.get("listener");
+                final ButtonClickedListener lister = (ButtonClickedListener) lSettings.get
+                        ("listener");
                 leftButton.setVisibility(View.VISIBLE);
                 leftButton.setText(lSettings.get("label").toString());
                 leftButton.setOnClickListener(new View.OnClickListener() {
@@ -221,7 +226,7 @@ public abstract class GenericDialog extends DialogFragment {
     }
 
 
-    public static class Dismiss implements ButtonClickedListener{
+    public static class Dismiss implements ButtonClickedListener {
         @Override
         public void onClick(View view, DialogFragment dialog) {
             dialog.dismiss();
