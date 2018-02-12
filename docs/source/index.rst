@@ -12,9 +12,14 @@ Welcome to Android Components's documentation!
 
 Documentation for android components
 
+
+.. figure:: https://jitpack.io/v/eddmash/androidcomponents.svg
+
+    Latest version of components
+
 To be able to use any of this components.
 
-- Add the JitPack repository to your build file
+- Add the JitPack repository to your build file.
 
 .. code-block:: java
 
