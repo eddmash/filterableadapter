@@ -1,38 +1,18 @@
 apply plugin: 'com.android.library'
 
-ext {
-    versionCode = 3
-    bintrayRepo = 'maven'
-    bintrayName = 'dialogs'
+apply plugin: 'android-maven'
 
-    publishedGroupId = 'com.eddmash'
-    libraryName = 'dialogs'
-    artifact = 'dialogs'
+group='com.github.eddmash.androidcomponents'
 
-    libraryDescription = 'A Generic Dialog class that is easy customizable.'
-
-    siteUrl = 'https://github.com/eddmash/dialogs'
-    gitUrl = 'https://github.com/eddmash/dialogs.git'
-
-    libraryVersion = "1.0.${versionCode}"
-
-    developerId = 'eddmash'
-    developerName = 'Eddilbert Macharia'
-    developerEmail = 'edd.cowan@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion project.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 25
-        versionCode project.versionCode
-        versionName "${libraryVersion}"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode project.ext.versionCode
+        versionName "${project.ext.versionName}"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -50,7 +30,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    implementation project.ext.supportDependencies.appCompat
     testCompile 'junit:junit:4.12'
 }
 //Add these lines to publish library to bintray
