@@ -46,7 +46,7 @@ public class LTECheck extends NotEmptyCheck {
             try {
                 Integer value = Integer.valueOf(getValue());
 
-                if (value >= min) {
+                if (value > min) {
                     return false;
                 }
             } catch (Exception e) {

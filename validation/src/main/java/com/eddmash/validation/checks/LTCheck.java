@@ -30,7 +30,7 @@ public class LTCheck extends NotEmptyCheck {
 
     public LTCheck(EditText view, String errorMessage, double min) {
         super(view, errorMessage);
-        this.min =  min;
+        this.min = min;
     }
 
     public LTCheck(Spinner view, String errorMessage, double min) {
@@ -45,7 +45,7 @@ public class LTCheck extends NotEmptyCheck {
             try {
                 Double value = Double.valueOf(getValue());
 
-                if (value > min) {
+                if (value != min || value > min) {
                     return false;
                 }
             } catch (Exception e) {

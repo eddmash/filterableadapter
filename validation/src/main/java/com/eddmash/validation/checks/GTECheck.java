@@ -45,7 +45,7 @@ public class GTECheck extends NotEmptyCheck {
             try {
                 Double value = Double.valueOf(getValue());
 
-                if (value <= max) {
+                if (value < max) {
                     return false;
                 }
             } catch (Exception e) {

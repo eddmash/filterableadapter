@@ -25,6 +25,8 @@ import com.eddmash.form.faker.DummyDataPopulator;
 import com.eddmash.form.faker.provider.TelephoneProvider;
 import com.eddmash.form.values.SimpleValue;
 import com.eddmash.form.values.ValueInterface;
+import com.eddmash.validation.checks.GTCheck;
+import com.eddmash.validation.checks.GTECheck;
 import com.eddmash.validation.checks.NotEmptyCheck;
 import com.eddmash.validation.renderer.ErrorRenderer;
 
@@ -99,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 new NotEmptyCheck(termsCheckbox,
                         getString(R.string.not_blank, "Terms")));
 
-        form.addCheck(new NotEmptyCheck(phoneNumber, getString(R.string.not_blank, "Phonenumber")));
+        form.addCheck(new GTECheck(phoneNumber, getString(R.string.not_blank, "Phonenumber"), 4));
 
         form.addCheck(new NotEmptyCheck(firstName,
                 getString(R.string.not_blank, "Firstname")));
