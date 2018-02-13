@@ -1,6 +1,6 @@
 package com.eddmash.validation.checks;
 /*
-* This file is part of the com.eddmash.validation package.
+* This file is part of the androidcomponents package.
 * 
 * (c) Eddilbert Macharia (http://eddmash.com)<edd.cowan@gmail.com>
 *

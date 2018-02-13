@@ -15,7 +15,7 @@ import java.util.Locale;
 import static android.text.InputType.TYPE_DATETIME_VARIATION_DATE;
 
 /*
-* This file is part of the Tools package.
+* This file is part of the androidcomponents package.
 * 
 * (c) Eddilbert Macharia (http://eddmash.com)<edd.cowan@gmail.com>
 *
