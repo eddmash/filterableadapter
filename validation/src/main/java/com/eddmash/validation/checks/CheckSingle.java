@@ -61,6 +61,8 @@ public abstract class CheckSingle implements CheckInterface {
 
     @Override
     public void clearError() {
-        getView().setError(null);
+        if (getView() != null) {
+            getView().setError(null);
+        }
     }
 }

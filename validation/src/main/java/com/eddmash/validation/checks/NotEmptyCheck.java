@@ -23,9 +23,9 @@ import java.util.Objects;
  */
 public class NotEmptyCheck extends CheckSingle {
 
-    private EditText editText;
-    private Spinner spinner;
-    private CompoundButton compoundButton;
+    protected EditText editText;
+    protected Spinner spinner;
+    protected CompoundButton compoundButton;
 
     protected String errorMessage;
 
@@ -46,7 +46,6 @@ public class NotEmptyCheck extends CheckSingle {
 
     @Override
     public boolean run() {
-        Log.e(getClass().getSimpleName(), errorMessage + " :: " + getValue().trim().isEmpty());
         return !getValue().trim().isEmpty();
     }
 
@@ -59,6 +58,7 @@ public class NotEmptyCheck extends CheckSingle {
     protected TextView getView() {
         TextView v = editText;
         if (spinner != null) {
+            Log.e(getClass().getSimpleName(), " SELECTED "+spinner.getSelectedView());
             v = (TextView) spinner.getSelectedView();
         }
 

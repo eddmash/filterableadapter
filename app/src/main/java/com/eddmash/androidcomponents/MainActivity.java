@@ -105,14 +105,14 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.not_blank, "Firstname")));
 
         // populate form with dummy data
-        DummyDataPopulator dataPopulator = new DummyDataPopulator();
-        try {
-            dataPopulator.setFieldProvider("phonenumber",
-                    new TelephoneProvider(dataPopulator, "(+###) ### ### ###"));
-            dataPopulator.populate(form);
-        } catch (FormException e) {
-            e.printStackTrace();
-        }
+//        DummyDataPopulator dataPopulator = new DummyDataPopulator();
+//        try {
+//            dataPopulator.setFieldProvider("phonenumber",
+//                    new TelephoneProvider(dataPopulator, "(+###) ### ### ###"));
+//            dataPopulator.populate(form);
+//        } catch (FormException e) {
+//            e.printStackTrace();
+//        }
 
         // run validations on click
         saveBtn = findViewById(R.id.savebtn);
