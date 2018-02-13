@@ -422,8 +422,11 @@ public class DataGridView extends LinearLayout {
             }
 
             if (!actionColumns.isEmpty()) {
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, ViewGroup
+                        .LayoutParams.WRAP_CONTENT, 1);
                 actionLayout = new LinearLayout(getContext());
                 actionLayout.setOrientation(HORIZONTAL);
+                actionLayout.setLayoutParams(params);
                 for (ActionColumn actionColumn : actionColumns) {
 
                     actionLayout.addView(
@@ -507,7 +510,7 @@ public class DataGridView extends LinearLayout {
     /**
      * You can populate the datagrid using a query. THe data grid will fetch data in a paginated
      * manner base on the page size set.
-     *
+     * <p>
      * <pre>
      *     dataGridView = (DataGridView) findViewById(R.id.content_dsp);
      *     dataGridView.setPageSize(3);
