@@ -356,6 +356,7 @@ public class DataGridView extends LinearLayout {
 
     protected void makeToolbarRow() {
         // hide the progress bar
+        topProgressBar.removeAllViews();
         topProgressBar.setVisibility(View.GONE);
 
         if (toolbarViews.size() > 0) {
