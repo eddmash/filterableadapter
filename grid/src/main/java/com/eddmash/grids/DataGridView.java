@@ -356,7 +356,6 @@ public class DataGridView extends LinearLayout {
 
     protected void makeToolbarRow() {
         // hide the progress bar
-        topProgressBar.removeAllViews();
         topProgressBar.setVisibility(View.GONE);
 
         if (toolbarViews.size() > 0) {
@@ -371,7 +370,6 @@ public class DataGridView extends LinearLayout {
     }
 
     protected void makeHeaderRow() {
-        headerLayout.removeAllViews();
         LinearLayout headerRow = new LinearLayout(getContext());
         boolean hasActions = false;
 
@@ -658,6 +656,7 @@ public class DataGridView extends LinearLayout {
     }
 
     private void reset() {
+        headerLayout.removeAllViews();
         getContentLayout().removeAllViews();
         getFooterLayout().removeAllViews();
     }
