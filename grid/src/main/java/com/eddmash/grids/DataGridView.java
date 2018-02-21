@@ -364,6 +364,9 @@ public class DataGridView extends LinearLayout {
             LinearLayout toolbarRow = new LinearLayout(getContext());
             toolbarRow.setGravity(Gravity.RIGHT);
             for (View view : toolbarViews) {
+                if (view.getParent() != null) {
+                    ((ViewGroup) view.getParent()).removeView(view);
+                }
                 toolbarRow.addView(view);
             }
             toolbarLoaded = true;
