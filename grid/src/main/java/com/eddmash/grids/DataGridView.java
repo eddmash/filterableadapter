@@ -103,7 +103,6 @@ public class DataGridView extends LinearLayout {
     private LinearLayout headerLayout;
     private View infoBar;
     private List<View> toolbarViews = new ArrayList<>();
-    private boolean toolbarLoaded = false;
 
     public DataGridView(Context context) {
         this(context, null);
@@ -359,7 +358,7 @@ public class DataGridView extends LinearLayout {
         // hide the progress bar
         topProgressBar.setVisibility(View.GONE);
 
-        if (toolbarViews.size() > 0 && !toolbarLoaded) {
+        if (toolbarViews.size() > 0) {
 
             LinearLayout toolbarRow = new LinearLayout(getContext());
             toolbarRow.setGravity(Gravity.RIGHT);
@@ -369,7 +368,7 @@ public class DataGridView extends LinearLayout {
                 }
                 toolbarRow.addView(view);
             }
-            toolbarLoaded = true;
+
             headerLayout.addView(toolbarRow);
         }
     }
