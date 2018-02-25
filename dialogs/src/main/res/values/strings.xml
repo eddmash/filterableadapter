@@ -3,4 +3,7 @@
     <string name="empty">empty</string>
     <string name="ok_btn">Ok</string>
     <string name="cancel_btn">Cancel</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="prompt">Select image</string>
 </resources>

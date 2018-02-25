@@ -38,4 +38,6 @@
     <string name="title_activity_dialogs">DialogsActivity</string>
     <string name="grid_dialog_example_title">Data Grid and Dialogs Example</string>
     <string name="dialog_example">Dialog Gridview Example</string>
+    <string name="title_activity_image_picker">ImagePickerActivity</string>
+    <string name="imagepickerdialog_example">Imagepicker dialog</string>
 </resources>

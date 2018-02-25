@@ -20,4 +20,12 @@
         <item name="android:layout_marginLeft">@dimen/paragraph_space</item>
     </style>
 
+    <style name="dialogBackgroundStyle">
+        <item name="android:layout_marginRight">@dimen/paragraph_space</item>
+        <item name="android:layout_marginLeft">@dimen/paragraph_space</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light">
+        <item name="dialogBackground">@style/dialogBackgroundStyle</item>
+    </style>
 </resources>

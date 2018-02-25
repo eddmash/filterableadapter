@@ -30,6 +30,10 @@
         <activity
             android:name=".DialogsActivity"
             android:label="@string/title_activity_dialogs"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ImagePickerActivity"
+            android:label="@string/title_activity_image_picker"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -156,6 +156,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DialogsActivity.class));
             }
         });
+        Button imagep = (Button) findViewById(R.id.imagepickerdialog_example);
+        imagep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ImagePickerActivity.class));
+            }
+        });
     }
 
     private void showErrorsAtTheTop() {
